@@ -18,4 +18,6 @@ This project was created both as a personal coding exercise and a practical tool
 - Built with HTML, CSS, and TypeScript (vanilla)
 - Mobile-first design strategy
 - Custom TypeScript for menu behavior
+- Form with validation 
 - Planned improvements: script optimization, better code organization, inline comments
+
