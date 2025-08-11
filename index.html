@@ -125,41 +125,10 @@
     <script src="src/library/jquery-1.9.1.min.js"></script>
     <script src="src/library/jquery.singlePageNav.min.js"></script>
     <script>
- $(document).ready(function() {
-  // Smooth scroll click/touch
-  $("#main-navbar a[href^='#']").on("click touchstart", function(e) {
-    e.preventDefault();
-    const target = this.hash;
-    if (target) {
-      $("html, body").animate({
-        scrollTop: $(target).offset().top
-      }, 800);
-    }
-  });
-
-  function updateCurrentLink() {
-    const scrollPos = $(window).scrollTop();
-
-    $("#main-navbar a[href^='#']").each(function() {
-      const currLink = $(this);
-      const refElement = $(currLink.attr("href"));
-
-      if (refElement.length) {
-        const refTop = refElement.offset().top - 50; 
-        const refBottom = refTop + refElement.outerHeight();
-
-        if (scrollPos >= refTop && scrollPos < refBottom) {
-          $("#main-navbar a").removeClass("currents");
-          currLink.addClass("currents");
-          return false;
-        }
-      }
-    });
-  }
-
-  updateCurrentLink();
-  $(window).on("scroll", updateCurrentLink);
-});
+      $("nav").singlePageNav({
+        currentClass: "currents",
+        time:1000,
+      });
     </script>
 </body>
 </html>
