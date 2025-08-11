@@ -1,0 +1,600 @@
+/*071013
+2dd881
+font-family: 'Pattanakarn', sans-serif;
+
+*/
+@import url("css/indexQuery.css");
+@import url("css/animation.css");
+@font-face {
+  font-family: 'Pattanakarn';
+  src: url('../assets/font/FontsFree-Net-Pattanakarn-Regular.ttf') format('truetype');
+}
+:root{
+    --burgerMenuHeight:180px;
+    --positionBurgerMenu:-30px;/*-30px  10px*/
+    --opacityEditTimer:1;
+    --opacitySubTimer:0;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Pattanakarn', sans-serif;
+    line-height: 1;
+
+}
+#wrapper1500{
+    max-width: 1500px;
+    margin: 0 auto;
+}
+#headerContainer{
+  background-color: #071013;
+}
+/*#region globalClass*/
+.hidden{
+    display: none;
+}
+#main-navbar #listNav li a.currents{
+  color:#2dd881;
+}
+.scaleSmaller{
+  transform: scale(0.7);
+}
+.trasleteY-50{
+  transform: translateY(-60px);
+}
+
+/*#endregion globalClass*/
+/*#region header*/
+header{
+    display:grid;
+    grid-template-areas: 
+    "logo h1"
+    "nav nav";
+    align-items: center;
+    justify-items: center;
+    color:white;
+    background-color:#071013 ;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 2;
+}
+header #logo{
+    width: 80px;
+    grid-area: logo;
+
+}
+header h1{
+    font-size: 30px;/*30/35*/
+    grid-area: h1;
+    margin: 0;
+    align-self: flex-end;
+}
+header nav{
+    grid-area: nav;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    margin-top: 40px;
+}
+#listNav{
+    list-style: none;
+    padding: 0;
+    position:absolute;
+    background-color: #071013;
+    top: var(--positionBurgerMenu);
+    width: 100%;
+    height: var(--burgerMenuHeight);
+    transition: .2s ease-in;
+    overflow: hidden;
+}
+#listNav li{
+    width: 150px;
+    text-align: center;
+    padding: 18px 0;
+    cursor: pointer;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+#listNav li a{
+    text-decoration: none;
+    color: white;
+    font-size: clamp(0.875rem,0.677vw +  0.739rem,1.375rem);
+    line-height: 1.2;
+}
+#listNav li a:visited{
+    color:inherit;
+}
+label[for="burgerMenu"]{
+    cursor: pointer;
+}
+#burgerMenu{
+  display: none;
+}
+label[for="burgerMenu"]:has(#burgerMenu:checked) ~ #listNav{
+    height: 180px;
+}
+/*#endregion header*/
+
+/*#region home*/
+#homeTarget{
+  width: 100%;
+  height: 300px;
+}
+#home{
+  position: relative;
+  padding: 5px;
+  text-align: center;
+  padding-top: 10px;
+  display: grid;
+  grid-template-areas: 
+  "h2"
+  "phone";
+  align-items: center;
+  justify-content: center;
+  animation: appear 2s;
+}
+#home div:first-of-type{
+  grid-area: h2;
+  justify-self: center;
+}
+#home h2{
+  font-size: clamp(0.875rem,0.677vw +  0.739rem,1.375rem); /*14-22px*/
+  margin: 0;
+  line-height: 2;
+  font-weight:500;
+  letter-spacing: 1px;
+  margin: 0 5px;
+  margin-bottom: 40px;
+  max-width: 650px;
+}
+#phoneHomeContainer{
+position: relative;
+display: inline-block;
+width: 100%;
+width: 290px;
+min-height: 580px;
+background-image: url(../assets/Smartphone/SmartphoneStr.png);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+transform: scale(0.8);
+grid-area: phone;
+justify-self: center;
+}
+
+#phoneHomeContainer iframe{
+position: absolute;
+left:-5px;
+top:-20px;
+border-radius: 18px;
+width: 100%;
+height: 110%;
+transform: scale(0.8);
+border:none;
+}
+#home img{
+  width: 130px;
+}
+
+/*#endregion home*/
+
+/*#region howWorks*/
+
+#howWorks{
+  padding: 5px;
+  text-align: center;
+}
+#howWorks h2{
+  line-height: 2;
+  font-size: clamp(1.375rem,0.677vw + 1.239rem, 1.875rem);/*22 30px*/
+}
+#howWorks div.menuContanier{
+  display: flex;
+  justify-content: center;
+  gap:50px;
+  margin-bottom: 40px;
+}
+
+#howWorks div.menuContanier p{
+  position: relative;
+  cursor: pointer;
+  font-size: clamp(0.875rem,0.677vw +  0.739rem,1.375rem);
+}
+#howWorks div.menuContanier p::after{
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: #2dd881;
+    position:absolute;
+    bottom: -10px;
+    left: 0;
+    transition: .3s;
+}
+#howWorks div.menuContanier p.selected::after{
+  width: 100%;
+}
+#contentEditTimer{
+  transition: opacity .2s ease;
+  opacity: var(--opacityEditTimer);
+  position: absolute;
+}
+#contentSubTimer{
+  transition: opacity .2s ease;
+  opacity: var(--opacitySubTimer);
+  position: absolute;
+}
+#contentSubTimer img{
+  transform: rotateY(180deg);
+}
+.contentHowWorkP{
+  line-height: 2;
+  font-size: clamp(0.875rem,0.677vw +  0.739rem,1.375rem);
+    max-width: 600px;
+  margin-bottom: 40px;
+}
+.contentHowWorkImg{
+  width: 250px;
+}
+
+/*#endregion howWorks*/
+/*#region howWorksPart2*/
+#howWorksPart2{
+  min-height: 770px;
+}
+#howWorksPart2 h2{
+  margin-top: 650px;
+  font-size: clamp(1.375rem,0.677vw + 1.239rem, 1.875rem);/*22 30px*/
+}
+#howWorksPart2 p{
+  line-height: 2;
+  font-size: clamp(0.875rem,0.677vw +  0.739rem,1.375rem);
+}
+#howWorksImgsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  margin-top: 40px;
+}
+#howWorksImgsContainer img{
+  width: 150px;
+}
+#howWorksImgsContainer div.arrow{
+  width: 75px;
+  height: 20px;
+  background-color: #071013;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  position: relative;
+  transform: rotate(90deg);
+  margin-bottom: 20px;
+}
+#howWorksImgsContainer div.triangle{
+  width: 0;
+  height: 0;
+  margin: 0;
+  border: 20px solid transparent;
+  position: absolute;
+  left:99%;
+  top:50%;
+  transform: translateY(-50%);
+  border-left:30px solid #071013;
+}
+#howWorksPart2 p:last-child{
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+/*#endregion howWorksPart2*/
+
+/*#region form*/
+#form{ /*section*/
+  text-align: center;
+  margin-top: 100px;
+}
+#form h2{
+  line-height: 2;
+  font-size: clamp(1.375rem,0.677vw + 1.239rem, 1.875rem);
+}
+
+#formNewsLetter{ 
+  fieldset{
+   border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: unset;
+}
+div.field-email,
+div.field-name,
+div.field-checkbox,
+div.field-submit{
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
+}
+.fieldset-wrapper{
+  margin: 5px;
+  border: 1px solid #071013;
+  padding: 5px;
+  padding-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+legend{
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+label{
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 10px;
+ font-size: clamp(0.875rem,0.677vw +  0.739rem,1.375rem);
+}
+#checkboxInput{
+  margin-top: 20px;
+}
+#checkboxGdprMsg{
+  font-size: 10px;
+  display: block;
+  text-align: justify;
+  line-height: 1.4;
+  max-width: 300px;
+  margin: 0 auto;
+}
+#formSubmit{
+  margin-top: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #2dd881;
+  font-size: 16px;
+}
+input[type="text"]{
+  font-size: clamp(0.875rem,0.677vw +  0.739rem,1.375rem);
+  padding: 5px 2px;
+  display: block;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 5px;
+  width:200px ;  
+}
+input.error{
+outline-color:red;
+}
+
+}
+/*#endregion form*/
+/*#region storeApp*/
+#playStore{
+  text-align: center;
+  margin-top: 100px;
+  h2{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-size: clamp(1.375rem,0.677vw + 1.239rem, 1.875rem);
+  }
+  div{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 40px;
+  }
+}
+/*#endregion storeApp*/
+
+/*#region errorForm*/
+.messageInvalid{
+  position: absolute;
+  color:red;
+  border-radius: 10px;
+  padding: 5px 20px;
+  top:50%;
+  right: 8%;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.invalidInput{
+  border:2px solid red;
+}
+/*#endregion errorForm*/
+
+/*#region footer*/
+footer{
+  width: 100%;
+  height: 200px;
+  background-color: #071013;
+  text-align: center;
+}
+footer p{
+  color: white;
+  line-height: 200px;
+}
+/*#endregion footer*/
+
+@media all and (min-width:550px){
+#formNewsLetter div.fieldset-wrapper input[type="text"]{
+    width: 300px;
+}
+}
+
+@media all and (max-width:710px){
+.messageInvalid{
+  font-size: 12px;
+  transform: translateY(-50%);
+  right: 3%;
+}
+}
+@media all and (max-width:620px){
+.messageInvalid{
+  right: 0%;
+}
+}
+@media all and (max-width:580px){
+.messageInvalid{
+  font-size: 10px;
+}
+}
+@media all and (max-width:430px){
+.messageInvalid{
+top:100%;
+left:15%;
+}
+}
+@media all and (max-width:330px){
+.messageInvalid{
+left:5%;
+}
+}
+@media all and (max-width:800px){
+.fieldset-wrapper{
+  width: 90%;
+}
+}
+
+
+@media all and (min-width:800px){
+header{
+    grid-template-areas: 
+    "logo h1 nav";
+    grid-template-columns: min-content;
+    align-items: center;
+    min-height: 120px;
+}
+
+header #listNav{
+  display:flex;
+  position: inherit;
+  height: min-content;
+}
+header #listNav li{
+left:0;
+transform: translateX(0);
+}
+header #logo{
+    width: 100px;
+    margin-left: 40px;
+}
+header h1{
+  align-self: center;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+header nav{
+  width: min-content;
+
+}
+#home{
+  grid-template-areas: 
+  "phone h2";
+  gap:4px;
+}
+#home div:first-child{
+  text-align: center;
+
+}
+#homeTarget{
+  height: 150px;
+}
+
+/*HowWorks*/
+#howWorks #contentEditTimer{
+  padding: 0 20px;
+  display:flex;
+  gap:50px;
+  align-items: center;
+  left:50%;
+  min-width:800px;
+  transform: translateX(-50%);
+
+}
+#howWorks #contentSubTimer{
+  padding: 0 20px;
+  display:flex;
+  gap:50px;
+  align-items: center;
+  left:50%;
+  min-width:800px;
+  transform: translateX(-50%);
+
+}
+#howWorks #contentSubTimer p{
+  order: 2;
+}
+
+#howWorks #contentSubTimer img{
+  order:1;
+}
+
+#howWorksImgsContainer{
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#howWorksImgsContainer div.arrow{
+  transform: rotate(0deg);
+}
+#howWorksPart2 p:last-child{
+  margin-top: 200px;
+  margin-bottom: 0;
+}
+#form{
+  margin-top: 200px;
+}
+#form h2{
+  margin-bottom: 80px;
+}
+
+}
+
+@media all and (min-width:1100px){
+  #home{
+    gap:10%;
+  }
+  #howWorks #contentEditTimer{
+min-width: 1000px;
+gap:20%;
+
+}
+#howWorks #contentSubTimer{
+min-width: 1000px;
+gap:20%;
+}
+#howWorksImgsContainer{
+  max-width: 900px;
+  gap:0px;
+  transform: scale(1.2);
+
+  margin: 0 auto;
+   margin-top: 100px;
+}
+header{
+padding:0 100px ;
+}
+header h1{
+  justify-self: left;
+  margin-left: 40px;
+}
+header nav {
+  justify-self: right;
+  margin-left: 40px;
+}
+
+#formNewsLetter input[type="text"]{
+  margin-top: 20px;
+}
+#formNewsLetter #checkboxGdprMsg{
+  margin-top: 20px;
+}
+
+}
+
+

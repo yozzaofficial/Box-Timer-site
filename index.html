@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boxe Timer web site introdution">
+    <meta name="author" content="Matteo Granchelli">
+    <meta name="keywords" content="boxe, timer, boxetimer, workout,matteogranchelli,Matteo,Granchelli,boxer">
+    <link rel="stylesheet" href="src/style.css">
+
+    <link rel="icon" href="assets/favicon_io/favicon.ico"/>
+    <link rel="apple-touch-icon" href="assets/favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon_io/android-chrome-512x512.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest"/>
+    <script src="src/main.ts" type="module" defer></script>
+    <title>Box Timer</title>
+</head>
+<body>
+    
+        <header>
+            <img id="logo" src="./assets/logo.svg" alt="Box Timer Logo"></img>
+            <h1>Box Timer</h1>
+            <nav id="main-navbar">
+                <label for="burgerMenu" id="labelBurgerMenu" class="hidden">#<input id="burgerMenu" type="checkbox"></label>
+                <ul id="listNav">
+                    <li tabindex="1" aria-haspopup="true"><a href="#homeTarget" class="currents">Home</a></li>
+                    <li tabindex="2" aria-haspopup="true"><a href="#howWorksTarget">How it works</a></li>
+                    <li tabindex="3" aria-haspopup="true"><a href="#formTarget">Contact</a></li>
+                </ul>
+
+            </nav>
+        </header>
+        
+    <div id="wrapper1500">
+
+        <section id="homeTarget"></section>
+        <section id="home">
+          <div>
+            <h2>Boxe timer designed for your heavy bag workouts: customize rounds, breaks, and sounds, and focus solely on hitting harder.</h2>
+            <img src="assets/punches.png">
+          </div>
+            <div id="phoneHomeContainer">
+              <iframe src="https://www.matteogranchelli.it/src/html/BoxTimer/"></iframe>
+            </div>
+              <div id="howWorksTarget"></div>
+
+        </section>
+        <section id="howWorks">
+            <h2 class="animationAppear">With Box Timer you can customize your workout!</h2>
+            <div class="menuContanier animationAppearSlide">
+              <p class="selected">Edit Timer</p>
+              <p>Sub Timer</p>
+            </div>
+            <article id="contentEditTimer" class="animationAppear">
+              <p class="contentHowWorkP">With the Edit Timer option, Box Timer allows you to customize your workout time individually!</p>
+              <img src="assets/Smartphone/smartphoneSub.webp" alt="Photo smartphone with the app Box Timer opened in edit timer" class="contentHowWorkImg">
+            </article><!--IMG NAMES INVERTED-->
+            <article id="contentSubTimer" class="hidden">
+              <p class="contentHowWorkP">With the Sub Timer option, Box Timer allows you to divide the work time of each round into smaller sections!</p>
+              <img src="assets/Smartphone/smartphoneEdit.webp" alt="Photo smartphone with the app Box Timer opened in sub timer" class="contentHowWorkImg">
+            </article>
+            <article id="howWorksPart2">
+              <h2 class="animationAppear">What do you have to do?</h2>
+              <p class="animationAppear">Just import your workout plan into Box Timer!</p>
+              <div id="howWorksImgsContainer">
+                <img src="assets/workoutPlan.webp" alt="Photo of a workoutplan" class="animationAppear delay1">
+                <div class="arrow animationAppear delay2">
+                  <div class="triangle animationAppear delay2"></div>
+                </div>
+                <img src="assets/Smartphone/smartphoneTimerAddWorkout.webp" alt="Photo smarphone with the app while adding workout" class="animationAppear delay3">                
+              </div>
+              <p class="sliderTopAnimation">You'll <strong>NEVER </strong>have to worry about the timer again!</p>
+            </article>
+            <div id="formTarget"></div>
+        </section>
+        
+        <section id="form">
+          <h2 class="animationAppear">Subscribe to get the latest updates</h2>
+          <form id="formNewsLetter" autocomplete="off">
+            <div class="fieldset-wrapper">
+              <fieldset>
+                <legend>
+                  Newsletter
+                </legend>
+                <div class="field-email animationAppear">
+                  <label for="emailField">Email: 
+                  <input type="text" name="emailField"  id="emailField" class="animationFormSlide">
+                  <div id="messageInvalidEmail" class="messageInvalid hidden">Invalid Email </div>
+                  </label>
+                </div>
+                <div class="field-name animationAppear">
+                  <label for="nameField">Name:
+                  <input type="text" name="nameField" id="nameField" class="animationFormSlide">
+                  <div id="messageInvalidName" class="messageInvalid hidden">Invalid Name</div>
+                  </label>
+                </div>
+                <div class="field-checkbox animationAppear">
+                  <label for="checkbox"></label>
+                    <input id="checkboxInput" type="checkbox" name="checkbox" required>
+                    <span id="checkboxGdprMsg">
+                            I have read the <a href="/privacy-policy" target="_blank">privacy policy</a> 
+                            and I consent to the processing of my personal data to receive updates by email.
+                      </span>
+                    </div>
+                  <div class="field-submit">
+                    <input type="submit" id="formSubmit">
+                  </div>
+                </fieldset>
+            </div>
+          </form>
+        </section>
+        <section id="playStore">
+              <h2 class="animationAppear">Coming soon</h2>
+              <div>
+                <img class="animationScale" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" style="height: 58px; ">
+                <img class="animationScale" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" >
+              </div>
+        </section>
+        
+    </div>
+    <footer>
+          <p>Realized by Matteo Granchelli</p>
+    </footer>
+    <script src="src/library/jquery-1.9.1.min.js"></script>
+    <script src="src/library/jquery.singlePageNav.min.js"></script>
+    <script>
+ $(document).ready(function() {
+  // Smooth scroll click/touch
+  $("#main-navbar a[href^='#']").on("click touchstart", function(e) {
+    e.preventDefault();
+    const target = this.hash;
+    if (target) {
+      $("html, body").animate({
+        scrollTop: $(target).offset().top
+      }, 800);
+    }
+  });
+
+  function updateCurrentLink() {
+    const scrollPos = $(window).scrollTop();
+
+    $("#main-navbar a[href^='#']").each(function() {
+      const currLink = $(this);
+      const refElement = $(currLink.attr("href"));
+
+      if (refElement.length) {
+        const refTop = refElement.offset().top - 50; 
+        const refBottom = refTop + refElement.outerHeight();
+
+        if (scrollPos >= refTop && scrollPos < refBottom) {
+          $("#main-navbar a").removeClass("currents");
+          currLink.addClass("currents");
+          return false;
+        }
+      }
+    });
+  }
+
+  updateCurrentLink();
+  $(window).on("scroll", updateCurrentLink);
+});
+    </script>
+</body>
+</html>

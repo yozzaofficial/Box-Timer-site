@@ -1,0 +1,14 @@
+/*#region hoverQuery*/
+@media(hover:hover){
+#listNav li:hover{
+    color:#2dd881;
+}
+}
+@media(hover:none){/*handling hover for all devices*/
+#listNav li:active,
+#listNav li:focus{
+    color: #2dd881;
+}
+}
+/*#endregion hoverQuery*/
+
