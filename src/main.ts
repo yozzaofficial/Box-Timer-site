@@ -1,11 +1,23 @@
 import { queryAllCheck, queryCheck } from "./ts/queryHelper";
 import { fromEvent } from 'rxjs';
+declare var $: any;
+
 
 const root= document.documentElement;
 const headerH1 = queryCheck<HTMLHeadElement>("header h1");
 const haederLogo = queryCheck<HTMLHeadElement>("header #logo");
 const header = queryCheck<HTMLHeadElement>("header");
 const navBar = queryCheck<HTMLElement>("header nav");
+
+
+
+$(function() {
+  $("nav").singlePageNav({
+    currentClass: "currents",
+    time: 1000,
+  });
+});
+
 
 //#region observer
 const observer = new IntersectionObserver((entries, observer) => {
