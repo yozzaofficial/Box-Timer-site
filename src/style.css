@@ -290,14 +290,13 @@ border:none;
 }
 #howWorksPart2 p:last-child{
   margin-top: 100px;
-  margin-bottom: 0;
+  margin-bottom: 200px;
 }
 /*#endregion howWorksPart2*/
 
 /*#region form*/
 #form{ /*section*/
   text-align: center;
-  margin-top: 100px;
 }
 #form h2{
   line-height: 2;

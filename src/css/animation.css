@@ -3,19 +3,19 @@
 }
 
 .animationAppearingSlide{
-  animation: appearSlide 1s ease-in forwards;
+  animation: appearSlide 0.7s ease-in forwards;
 }
 .animationAppearing{
-  animation: appear 1s ease-in forwards;
+  animation: appear 0.7s ease-in forwards;
 }
 .animationHeight{
-  animation: animationHeight 1.5s ease-in forwards;
+  animation: animationHeight 1s ease-in forwards;
 }
 .animationSlide{
-  animation: slideTop .8s ease-in forwards;
+  animation: slideTop .5s ease-in forwards;
 }
 .animationSlideForm{
-    animation: slideForm 1s ease forwards;
+    animation: slideForm 0.7s ease forwards;
     animation-delay: .5s;
 }
 .animationFormSlide{
